@@ -13,6 +13,9 @@ dist/
 *.swo
 *~
 
+# Project files
+CLAUDE.md
+
 # OS
 .DS_Store
 Thumbs.db
