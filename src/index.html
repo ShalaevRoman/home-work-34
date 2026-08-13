@@ -14,13 +14,18 @@
 
         <main>
             <section class="features">
-                <h2>Features Implemented</h2>
+                <h2>Advanced Features Implemented</h2>
                 <ul>
+                    <li>✓ DevServer with hot module replacement (HMR)</li>
+                    <li>✓ CSS/SCSS/LESS preprocessing support</li>
+                    <li>✓ TypeScript compilation with ts-loader</li>
+                    <li>✓ Babel transpilation for modern JavaScript</li>
+                    <li>✓ ESLint integration for code quality</li>
+                    <li>✓ Webpack Bundle Analyzer for visualization</li>
                     <li>✓ File hashing for cache busting</li>
-                    <li>✓ Local fonts support</li>
-                    <li>✓ Image optimization</li>
-                    <li>✓ CSS integration with extraction</li>
-                    <li>✓ Vendor library optimization</li>
+                    <li>✓ Local fonts and image optimization</li>
+                    <li>✓ Vendor chunk separation</li>
+                    <li>✓ Source maps for debugging</li>
                 </ul>
             </section>
 
@@ -37,14 +42,40 @@
                 <p class="custom-font">This text uses custom fonts loaded by Webpack</p>
             </section>
 
+            <section class="theme-card">
+                <div class="card-header">
+                    <h2>Preprocessors & Languages</h2>
+                </div>
+                <div class="card-body">
+                    <p><strong>SCSS/Sass:</strong> Advanced styling with variables, mixins, and nesting (components.scss)</p>
+                    <p><strong>LESS:</strong> Dynamic stylesheet language with functions and operations (theme.less)</p>
+                    <p><strong>TypeScript:</strong> Type-safe JavaScript development with interfaces and generics (utils.ts)</p>
+                    <p><strong>Babel:</strong> Transforms modern JavaScript to support older browsers</p>
+                </div>
+                <div class="card-footer">
+                    All preprocessors are automatically compiled during build
+                </div>
+            </section>
+
             <section class="info">
-                <h2>Build Information</h2>
-                <p>This application was built with Webpack and includes:</p>
+                <h2>Build Configuration</h2>
                 <ul>
-                    <li>Production-ready configuration</li>
-                    <li>Source maps for debugging</li>
-                    <li>Optimized bundle size</li>
-                    <li>Vendor chunk separation</li>
+                    <li>✓ Development mode with cheap source maps</li>
+                    <li>✓ Production mode with optimized output</li>
+                    <li>✓ Tree-shaking for unused code removal</li>
+                    <li>✓ Split chunks strategy for better caching</li>
+                    <li>✓ Hot Module Replacement (HMR) for instant updates</li>
+                </ul>
+            </section>
+
+            <section class="info">
+                <h2>Available Commands</h2>
+                <ul>
+                    <li><code>npm start</code> - Start dev server with HMR</li>
+                    <li><code>npm run build</code> - Production build with optimization</li>
+                    <li><code>npm run dev</code> - Development build</li>
+                    <li><code>npm run lint</code> - Run ESLint to check code quality</li>
+                    <li><code>ANALYZE=true npm run build</code> - Generate bundle analysis</li>
                 </ul>
             </section>
         </main>

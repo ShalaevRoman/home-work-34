@@ -1,0 +1,123 @@
+@import './variables';
+
+// Button styles with nesting
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-md;
+  border: none;
+  border-radius: $border-radius-md;
+  font-size: $font-size-base;
+  cursor: pointer;
+  transition: all $transition-normal;
+  font-family: $font-family-sans;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-md;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+
+  &--secondary {
+    background-color: $secondary-color;
+    color: white;
+
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Card component
+.card {
+  background: white;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  box-shadow: $shadow-sm;
+  transition: all $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-lg;
+  }
+
+  &__title {
+    font-family: $font-family-serif;
+    font-size: $font-size-2xl;
+    color: $primary-color;
+    margin-bottom: $spacing-md;
+  }
+
+  &__content {
+    font-size: $font-size-base;
+    color: $text-color;
+    line-height: 1.6;
+  }
+}
+
+// Badge component
+.badge {
+  display: inline-block;
+  padding: $spacing-xs $spacing-sm;
+  border-radius: $border-radius-sm;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background-color: $light-bg;
+  color: $text-color;
+
+  &--success {
+    background-color: #d4edda;
+    color: #155724;
+  }
+
+  &--warning {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+
+  &--error {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+}
+
+// Container utilities
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
+
+  @include respond-to('md') {
+    padding: 0 $spacing-md;
+  }
+
+  @include respond-to('sm') {
+    padding: 0 $spacing-sm;
+  }
+}
+
+// Grid system
+.grid {
+  display: grid;
+  gap: $spacing-lg;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  @include respond-to('md') {
+    gap: $spacing-md;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  @include respond-to('sm') {
+    grid-template-columns: 1fr;
+  }
+}

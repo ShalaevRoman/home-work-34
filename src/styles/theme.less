@@ -1,0 +1,132 @@
+// LESS Variables
+@primary: #667eea;
+@secondary: #764ba2;
+@accent: #f093fb;
+@text-dark: #333;
+@text-light: #666;
+@bg-light: #f8f9fa;
+@border: #e0e0e0;
+
+// LESS Mixins
+.shadow(@x: 0, @y: 4px, @blur: 15px, @spread: 0, @color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: @x @y @blur @spread @color;
+}
+
+.transition(@property: all, @duration: 0.3s, @timing: ease) {
+  transition: @property @duration @timing;
+}
+
+.border-radius(@radius: 8px) {
+  border-radius: @radius;
+}
+
+.flex-center() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Theme styles
+.theme-wrapper {
+  background: linear-gradient(135deg, @primary 0%, @secondary 100%);
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.theme-card {
+  background: white;
+  .border-radius(12px);
+  .shadow(0, 4px, 15px);
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  .transition();
+
+  &:hover {
+    .shadow(0, 8px, 25px);
+    transform: translateY(-5px);
+  }
+
+  .card-header {
+    border-bottom: 2px solid @primary;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    h2 {
+      color: @primary;
+      margin: 0;
+    }
+  }
+
+  .card-body {
+    color: @text-dark;
+    line-height: 1.6;
+
+    p {
+      margin: 0.5rem 0;
+    }
+  }
+
+  .card-footer {
+    border-top: 1px solid @border;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    color: @text-light;
+    font-size: 0.9rem;
+  }
+}
+
+// Color variants
+.text-primary {
+  color: @primary;
+}
+
+.text-secondary {
+  color: @secondary;
+}
+
+.text-accent {
+  color: @accent;
+}
+
+.bg-primary {
+  background-color: @primary;
+  color: white;
+}
+
+.bg-secondary {
+  background-color: @secondary;
+  color: white;
+}
+
+// Responsive utilities
+@media (max-width: 768px) {
+  .theme-wrapper {
+    padding: 1rem;
+  }
+
+  .theme-card {
+    padding: 1.5rem;
+
+    .card-header {
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// Animation keyframes
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease;
+}
